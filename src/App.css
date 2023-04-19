@@ -1,0 +1,24 @@
+.App{
+    display: flex;
+    flex-direction: row;
+    background-color:#121212;
+    color:whitesmoke;
+}
+.scroll_disable::-webkit-scrollbar{
+    display: none;
+}
+body{
+font-family: 'Bree Serif', serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Righteous', cursive;
+overflow-x: hidden;
+}
+.scrollBar_style::-webkit-scrollbar{
+    background-color: #454545;
+    height: 10px;
+   
+}
+.scrollBar_style::-webkit-scrollbar-thumb {
+    background-color:#4ADE80;
+    border-radius: 10px;
+  }
