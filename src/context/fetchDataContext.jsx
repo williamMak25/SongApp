@@ -86,7 +86,7 @@ export const DataContext = ({children}) => {
 //-----------------------------------fetching track from spotify-----------------------------------//
 
   const artist_tracks = artistId_Array.map( id => fetch(`https://api.spotify.com/v1/artists/${id}/top-tracks?market=us`,{
-    headers:{"Authorization": `Bearer ${token}`}
+    headers:{"Authorization": `Bearer ${data.access_token}`}
   }).then(res => { 
     if(res.ok){
       setError(false)
