@@ -105,10 +105,10 @@ export const HomePage = () => {
             <p className='text-3xl m-3 text-green-400 max-sm:text-sm'>Popular Artist</p>
           </div>
           <hr className='border-green-600 mx-7'/>
-          <div className=' flex flex-row justify-around pl-28 py-5 w-full h-82 overflow-x-auto overflow-y-hidden scrollBar_style'>
+          <div className='w-full flex flex-row justify-around pl-28 py-5 w-full h-82 overflow-x-auto overflow-y-hidden scrollBar_style max-sm:pl-96'>
               {artists?.slice(0,7).map( artist => {
                 return(
-                  <div className='bg-zinc-800 w-52 mx-5 rounded p-2 hover:border border-green-400' key={artist?.id}>
+                  <div className='bg-zinc-800 w-52 mx-5 rounded p-2 hover:border border-green-400 max-sm:inline-block max-sm:whitespace-nowrap' key={artist?.id}>
                     <NavLink to={`/artist/${artist?.id}`} className='w-52'>
                       <img src={artist?.images[2].url} className='mx-auto mt-2 rounded- w-52'/>
                       <p className='mt-3 text-xl w-48 text-center'>{artist?.name}</p>

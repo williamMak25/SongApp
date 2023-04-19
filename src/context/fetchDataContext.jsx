@@ -47,29 +47,26 @@ export const DataContext = ({children}) => {
 
 //------------------------fetching album from spotify-------------------------------------//
 
-        const artist_album = artistId_Array.map( id => fetch(`https://api.spotify.com/v1/artists/${id}/albums`,{
-          headers:{"Authorization": `Bearer ${data.access_token}`}
-        }).then(res => {
-          if(res.ok){
-            setError(false)
-            return res.json()
-          }else{
-            setError(true)
-            setErrorStatus(res.status)
-            throw new error(res.status)
-          } 
-        }))
-        Promise.all(artist_album)
-        .then( data => setAlbums(data))
-        .catch( err => console.log(err.message))
-    })
-    .catch(err => console.log(err.message))
-    
+  const artist_album = artistId_Array.map( id => fetch(`https://api.spotify.com/v1/artists/${id}/albums`,{
+    headers:{"Authorization": `Bearer ${data.access_token}`}})
+    .then(res => {
+      if(res.ok){
+        setError(false)
+          return res.json()
+      }else{
+        setError(true)
+        setErrorStatus(res.status)
+        throw new error(res.status)} 
+    }))
+    Promise.all(artist_album)
+    .then( data => setAlbums(data))
+    .catch( err => console.log(err.message))
+
 //---------------------------------fetching artists from spotify-------------------------------------//
 
   const ARTIST = artistId_Array.map( artistId => 
     fetch(`https://api.spotify.com/v1/artists/${artistId}`,{
-      headers:{"Authorization": `Bearer ${token}`}
+      headers:{"Authorization": `Bearer ${data.access_token}`}
     }).then(res=>{ 
       if(res.ok){
         setError(false)
@@ -86,6 +83,8 @@ export const DataContext = ({children}) => {
   })
   .catch( error => console.log(error.message))
   
+}).catch(err => console.log(err.message))
+    
 
 //-----------------------------------fetching track from spotify-----------------------------------//
 

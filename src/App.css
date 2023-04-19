@@ -13,6 +13,9 @@ font-family: 'Libre Baskerville', serif;
 font-family: 'Righteous', cursive;
 overflow-x: hidden;
 }
+.scrollBar_style{
+    white-space: nowrap;
+}
 .scrollBar_style::-webkit-scrollbar{
     background-color: #454545;
     height: 10px;
