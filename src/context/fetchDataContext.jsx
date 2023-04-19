@@ -82,9 +82,6 @@ export const DataContext = ({children}) => {
     setArtists(data);
   })
   .catch( error => console.log(error.message))
-  
-}).catch(err => console.log(err.message))
-    
 
 //-----------------------------------fetching track from spotify-----------------------------------//
 
@@ -104,6 +101,11 @@ export const DataContext = ({children}) => {
       setTracks(data)
   })
   .catch( err => console.log(err.message))
+  
+}).catch(err => console.log(err.message))
+    
+
+
   
 
   },[])
